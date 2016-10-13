@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>javascript constructor</title>
+</head>
+<body>
+<script type="text/javascript">
+	//定义一个构造函数Person（），可以看作是person类,Person()构造器
+	(function(){
+		//里面的this指调用方，cody 使用new关键字调用一个Person（）构造函数，所以this指代cody
+		var Person=function(living,age,gender){
+			this.living=living;
+			this.age=age;
+			this.gender=gender;
+			this.getGender = function(){return this.gender};
+		};
+		//定义一个person的实例对象cody，new是调用Person（）构造函数的关键字；
+		var cody=new Person("China",22,"male");
+
+		console.log("cody.age: " + cody.age );
+		console.log("cody.getGender(): " + cody.getGender());
+		console.log("cody.getGender: " + cody.getGender);
+		console.log("cody.constructor: " + cody.constructor);
+	}());
+
+</script>
+</body>
+</html>
